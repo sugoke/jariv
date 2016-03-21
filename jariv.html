@@ -1,0 +1,204 @@
+<head>
+  <title>JARIV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+
+<meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL">
+
+</head>
+
+<body>
+  
+  {{#unless isCordova}}
+  
+  <script type="text/javascript">
+ var Appnext_ddd124 = {
+       android_id: '20f7f9f6-744a-4041-b906-6f62deb69078',
+       ios_id: '9ca1edb9-fd0c-4caa-b265-87bd27ce6f68',
+       cat: '',
+       pbk: '',
+       b_title: '',
+       b_color: '',
+       skip_url: '',
+       skip_title: '',
+       mute: '',
+       timeout: '5',
+       times_to_show: '',
+       times_to_show_reset: '5',
+       creative:'managed',
+       pview:'true',
+       iosfb: 'https://admin.appnext.com/tools/tags/video/v2/js/script2.js'
+     };
+	(function(){
+	var _s=document.createElement('script');
+	_s.type='text/javascript';
+	_s.async=true;
+	_s.src='https://appnext.hs.llnwd.net/tools/tags/video/manage_script_4815.js';
+	(document.body)?document.body.appendChild(_s):document.head.appendChild(_s);
+	})();
+</script>
+    
+  {{/unless}}
+</body>
+
+<template name="back">
+     <br>     <br>     <br>     <br>
+<img src="mapsico.png" alt="Mountain View" style="width:304px;height:228px;">
+
+</template>
+
+
+<template name="position">
+    
+    
+    {{#if position}}
+     <br>
+    
+    <div class="map-container">
+    
+ 
+          {{> googleMap name="exampleMap" options=exampleMapOptions}}
+    
+          
+        </div>
+        
+    
+         {{else}}
+
+
+<div class="row">
+  <div class="col"><i class="fa fa-hand-paper-o fa-4x fa-inverse petite" id="testsms"></i></div>
+</div>
+
+<div class="row">
+  <div class="col"><span class= "subtitles">The user stopped sharing his location</span></div>
+</div>
+
+	
+
+        
+        {{/if}}
+  
+</template>
+
+<template name="index">
+
+
+ <!-- {{location.lat}}  -->
+
+{{#if $eq GPS.code 1}} 
+<br><br><span class= "subtitles">Your GPS is Off<br><br>Turn it ON and <a href="#" onclick="window.location.reload();">reload the app</a>.</span>
+ {{else}}
+
+<br><br>
+
+   
+        {{#unless link}}
+        <br><br>
+        
+    
+
+        <i class="fa fa-map-marker fa-5x fa-inverse" id="create"></i> 
+        <br>
+     <span class= "subtitles">Start</span>
+     
+ 
+        
+        
+       
+        {{/unless}}
+
+           {{#if link}}
+	
+<br><br>
+
+
+
+<div class="row">
+
+  <div class="col"><i class="fa fa-share fa-4x fa-inverse petite" id="testsms"></i></div>
+  <div class="col"><i class="fa fa-stop-circle fa-4x fa-inverse petite" id="stop"></i> </div>
+
+</div>
+<div class="row">
+
+  <div class="col"><span class= "subtitles">Share</span></div>
+  <div class="col"><span class= "subtitles">Stop</span></div>
+
+</div>
+
+ <!--  {{GPS.code}} {{GPS.message}}  -->
+        {{/if}}
+  
+ <i class="fa fa-question fa-2x fa-inverse"></i>  
+
+ {{/if}}
+
+
+
+ <!--{{#if $eq GPS.code 1}} 
+<br><br><span class= "subtitles">Your GPS is Off<br><br>Turn it ON and <a href="#" onclick="window.location.reload();">reload the app</a>.</span>
+ {{/if}}
+
+{{#if $eq GPS.code 2}} 
+<br><br><span class= "subtitles">The GPS signal is too weak.<br><br><a href="#" onclick="window.location.reload();">Reload the app</a>.</span>
+ {{/if}}
+ 
+
+{{#if $eq GPS.code 3}} 
+<br><br><span class= "subtitles">The GPS signal is too weak.<br><br><a href="#" onclick="window.location.reload();">Reload the app</a>.</span>
+ {{/if}}
+ -->
+
+ 
+
+ 
+</template>
+
+<template name="map">  
+  <div class="map-container">
+    {{#unless geolocationError}}
+      {{> googleMap name="map" options=mapOptions}}
+    {{else}}
+      Geolocation failed: {{geolocationError}}
+    {{/unless}}
+  </div>
+</template>  
+
+<template name="slideBox"> 
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton path="index"}}
+  {{/contentFor}}
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Explanations</h1>
+  {{/contentFor}}
+ 
+ {{#ionView}}
+    {{#ionContent}}
+      {{#ionSlideBox}}
+        {{#ionSlide class="light-bg"}}
+          <h3>Tap the Start Button</h3>
+          
+          Jariv creates a link. <br><br>In the next step, you will be able to <br>send it to some of your contacts.
+                   
+        {{/ionSlide}}
+        {{#ionSlide class="light-bg"}}
+          <h3>Tap the Share Button</h3>
+          
+          An SMS (or E-mail) will be created. <br><br>You can then choose one or several <br>contacts from your address book.
+          
+        {{/ionSlide}}
+        {{#ionSlide class="light-bg"}}
+          <h3>Done!</h3>
+          
+          After clicking on the link they have received, <br>your friends will see your position on the map.<br><br>
+          When you don't need it anymore, <br>just tap Stop, and your link will be destroyed.
+          
+              
+        {{/ionSlide}}
+      {{/ionSlideBox}}
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>  

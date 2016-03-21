@@ -1,0 +1,138 @@
+$positive: #0066FF;
+$loading-font-size: 22px;
+
+@import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/_ionic';
+@import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/_ionicons';
+
+
+
+
+.ionic-body.platform-android {
+  font-family: "Roboto", sans-serif;
+
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Roboto", sans-serif;
+  }
+
+  .tab-item {
+    font-family: "Roboto", sans-serif;
+  }
+}
+
+.ion-slide {
+  text-align: center;
+  padding-top: 200px;
+
+  &.dark-bg {
+    h3 {
+      color: #fff;
+    }
+  }
+}
+
+.popover {
+  height: auto;
+}
+
+.item-button-left, .item-button-right {
+  button {
+    top: 16px !important;
+  }
+}
+
+.map-container .scroll {
+  height: 100%;
+}
+.map-container {
+  height: 80%;
+  width: 100%;
+  position: absolute;
+  top: 20%;
+  bottom: 20%;
+  left: 0;
+}
+
+
+
+.view {
+background-image:linear-gradient(60deg, #CCFFFF, #3399FF);
+}
+
+.title {
+
+font-family: "Trebuchet MS", Helvetica, sans-serif;
+   margin-top: 50px;
+   margin-bottom: 20px;
+   color: white;
+   font-size: 600%;
+   text-shadow: 1px 1px 2px grey;
+}
+
+.subtitles {
+
+font-family: "Trebuchet MS", Helvetica, sans-serif;
+   margin-top: 90px;
+   color: white;
+   font-size: 150%;
+   text-shadow: 1px 1px 2px grey;
+   margin-top: 30px;
+}
+
+.fa-map-marker {
+ border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+    width: 100px;
+    height: 100px;
+    padding: 12px;
+	margin: 10px;
+    //background: radial-gradient(circle, #0066FF, #3399FF); 
+    border: 3px solid #CCFFFF;
+
+    text-align: center;
+ 
+}
+
+.fa-map-marker:active {
+    background-color: white;
+}
+
+.petite {
+ border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+    width: 90px;
+    height: 90px;
+    padding: 15px;
+	
+    //background: radial-gradient(circle, #0066FF, #3399FF); 
+    border: 3px solid #CCFFFF;
+
+    text-align: center;
+ 
+}
+
+.petite:active {
+    background-color: white;
+}
+
+
+
+.fa-question {
+ border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+    width: 40px;
+    height: 40px;
+    padding: 3px;
+	
+    //background: radial-gradient(circle, #0066FF, #3399FF); 
+    border: 4px solid #CCFFFF;
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+ 
+}
+
+
+.fa-question:active {
+    background-color: white;
+}

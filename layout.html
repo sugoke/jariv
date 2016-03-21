@@ -1,0 +1,66 @@
+<template name="layout">
+  {{#ionBody}}
+
+
+        {{#ionNavView}}
+       
+
+  {{#ionView}}
+  
+  
+  <!-- 
+    {{#ionSubheaderBar}}
+      <h2 class="title">LIVE position</h2>
+    {{/ionSubheaderBar}}
+-->
+
+    {{#ionContent}}
+        
+        
+        <center> 
+        
+  <div class=title>Jariv</div>
+        
+        
+          {{> yield}}
+          
+          
+          </center> 
+          
+            {{/ionContent}}
+
+    {{#ionFooterBar class="bar-dark"}}
+      <h1 class="title">{{#if idlink}}Broadcasting position - Followers:  {{followers}} {{/if}}
+      
+     {{#if distance}} Distance: {{distance}}  {{/if}}
+      </h1>
+      
+    {{/ionFooterBar}}
+  {{/ionView}}
+          
+          
+        {{/ionNavView}}
+
+   
+
+
+
+  {{/ionBody}}
+</template>
+
+
+<template name="slidelayout">
+{{#ionBody}}
+
+
+
+        {{> ionNavBar class="bar-positive"}}
+
+        {{#ionNavView}}
+          {{> yield}}
+        {{/ionNavView}}
+
+
+
+  {{/ionBody}}
+</template>
