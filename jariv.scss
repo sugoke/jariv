@@ -1,8 +1,10 @@
 $positive: #0066FF;
 $loading-font-size: 22px;
 
-@import 'sass/meteoric_ionic-sass/_ionic';
-@import 'sass/meteoric_ionicons-sass/_ionicons';
+@import 'app-variables';
+
+@import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/_ionic';
+@import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/_ionicons';
 
 
 
